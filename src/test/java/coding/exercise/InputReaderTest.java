@@ -8,12 +8,19 @@ import java.util.List;
 
 
 public class InputReaderTest {
-    InputReader inputReader = new InputReader();
+    private InputReader inputReader = new InputReader();
 
     @Test
     public void shouldReadAddOperation() throws IOException {
         List<Operation> addOperation = inputReader.readFromFile("test1");
         Assert.assertEquals("+", addOperation.get(0).operator);
+    }
+
+    @Test
+    public void shouldReadNumberAtAddOperation() throws IOException {
+        List<Operation> addOperation = inputReader.readFromFile("test1");
+        Float expected = 2.0f;
+        Assert.assertEquals(expected, addOperation.get(0).value);
     }
 
     @Test
@@ -23,9 +30,23 @@ public class InputReaderTest {
     }
 
     @Test
+    public void shouldReadNumberAtMultiplyOperation() throws IOException {
+        List<Operation> addOperation = inputReader.readFromFile("test2");
+        Float expected = 3.0f;
+        Assert.assertEquals(expected, addOperation.get(0).value);
+    }
+
+    @Test
     public void shouldReadSubstractOperation() throws IOException {
         List<Operation> substractOperation = inputReader.readFromFile("test3");
         Assert.assertEquals("-", substractOperation.get(0).operator);
+    }
+
+    @Test
+    public void shouldReadNumberSubstractOperation() throws IOException {
+        List<Operation> addOperation = inputReader.readFromFile("test3");
+        Float expected = 2.0f;
+        Assert.assertEquals(expected, addOperation.get(0).value);
     }
 
     @Test
@@ -35,10 +56,23 @@ public class InputReaderTest {
     }
 
     @Test
-    public void shouldReadNothing() throws IOException {
+    public void shouldReadNumberAtDivideOperation() throws IOException {
+        List<Operation> addOperation = inputReader.readFromFile("test4");
+        Float expected = 3.0f;
+        Assert.assertEquals(expected, addOperation.get(0).value);
+    }
+
+    @Test
+    public void shouldReadApplyOperation() throws IOException {
         List<Operation> divideOperation = inputReader.readFromFile("test5");
         Assert.assertEquals("", divideOperation.get(0).operator);
     }
 
+    @Test
+    public void shouldReadNumberAtApplyOperation() throws IOException {
+        List<Operation> addOperation = inputReader.readFromFile("test5");
+        Float expected = 10.0f;
+        Assert.assertEquals(expected, addOperation.get(0).value);
+    }
 
 }

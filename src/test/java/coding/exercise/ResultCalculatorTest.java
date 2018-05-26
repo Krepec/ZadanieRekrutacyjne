@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class ResultCalculatorTest {
-    InputReader inputReader = new InputReader();
+    private InputReader inputReader = new InputReader();
 
 
 
@@ -25,6 +25,7 @@ public class ResultCalculatorTest {
     public void shouldThrowExeptionWhenDivideByZero() throws IOException, IllegalStateException {
         List<Operation> inputDataFromFile = inputReader.readFromFile("test7");
         Float result = ResultCalculator.calculate(inputDataFromFile);
+        //expected value here isn't important because test testing divide by zero
         Float expected = 1f;
         Assert.assertEquals(expected, result);
     }

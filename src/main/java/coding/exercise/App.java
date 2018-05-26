@@ -7,7 +7,7 @@ public class App {
 
 
     public static void main(String[] args) throws IOException {
-        String path = "/home/krzysztof/Downloads/codingexercise/src/main/resources/numbers";
+        String path = "numbers";
         InputReader read = new InputReader();
 
 
