@@ -7,9 +7,8 @@ public class App {
 
 
     public static void main(String[] args) throws IOException {
-        String path = "numbers";
+        String path = args[0];
         InputReader read = new InputReader();
-
 
         List<Operation> operationList =  read.readFromFile(path);
 
